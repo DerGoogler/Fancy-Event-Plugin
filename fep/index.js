@@ -1,11 +1,8 @@
-var hardDevice = app.getDefaultHardDevice();
+var hardDevice = app.getSelectedHardDevice();
 var pluginName = "fep";
 
 // Add custom settings to the SettingsActivity
-app.require(hardDevice, "fep/core/settings.js");
-
-// Just sample shortcuts
-app.require(hardDevice, "fep.core/shortcuts.js");
+app.require(hardDevice, ["fep/core/settings.js", "fep/core/shortcuts.js"]);
 
 // Loads the fireworks if enabled
 if (app.getPluginPref(pluginName, "enableFireworks") === "true") {
